@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Tramites
+{% endblock %}
+
+{% block contenido %}
+<h1>Tramites</h1>
+<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
+    {% for tramite  in  tramites %}
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{tramite.nombre_tramites}}</h5>
+            <p class="card-text">{{tramite.pais}}</p>
+            <p class="card-text">{{tramite.descripcion}}</p>
+            <a href="#" class="btn btn-primary">Ver mas!</a>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+{% endblock %}

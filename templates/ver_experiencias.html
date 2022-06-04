@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Experiencias
+{% endblock %}
+
+{% block contenido %}
+<h1>Experiencias de viajeros</h1>
+<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
+    {% for experiencia  in  experiencias %}
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{experiencia.titulo}}</h5>
+            <p class="card-text">{{experiencia.pais}}</p>
+            <p class="card-text">{{experiencia.fecha}}</p>
+            <p class="card-text">{{experiencia.autor}}</p>
+            <p class="card-text">{{experiencia.cuerpo}}</p>
+            <a href="#" class="btn btn-primary">Ver mas!</a>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+{% endblock %}

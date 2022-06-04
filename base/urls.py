@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
 from base.views import inicio
-from base.views import login
-from django.views.generic.base import TemplateView # new
+from base.views import login , search_experiencias_view
+from django.views.generic.base import TemplateView 
 
 
 urlpatterns = [
@@ -14,4 +14,5 @@ urlpatterns = [
     path('', include("cuenta.urls")),
     path('', include("django.contrib.auth.urls")),
     path("login/", login, name = 'login'),
+    path('search_experiencias_view/', search_experiencias_view, name='search'),
 ]

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Contacto
+{% endblock %}
+
+{% block contenido %}
+{% if form %}
+
+    <form action="" method="POST" >
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <input type="submit", value="Enviar!">
+    </form>
+{% elif new_experiencia %}
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{experiencia.titulo}}</h5>
+            <p class="card-text">{{experiencia.pais}}</p>
+            <p class="card-text">{{experiencia.fecha}}</p>
+            <p class="card-text">{{experiencia.autor}}</p>
+            <p class="card-text">{{experiencia.cuerpo}}</p>
+        </div>
+    </div>
+
+{% endif %}
+{% endblock %}
