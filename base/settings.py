@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 
+from contacto.views import contacto
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -40,10 +42,10 @@ BASE_APPS = [
 ]
 
 MY_APPS = [
-        'contacto',
         'experiencias',
         'tramites',
-        "cuenta"
+        "cuenta",
+        'contacto.apps.ContactoConfig',
 
 ]
 
@@ -142,3 +144,6 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL  =  "/"
 LOGOUT_REDIRECT_URL  =  "/"
+
+DEFAULT_FROM_EMAIL  =  ' Blog-Viajes@gmail.com ' 
+EMAIL_BACKEND  =  'django.core.mail.backends.console.EmailBackend'

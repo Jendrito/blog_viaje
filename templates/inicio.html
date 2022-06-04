@@ -5,16 +5,11 @@ Inicio
 {% endblock %}
 
 {% block contenido %}
-<div class="AlertaInicioDeSesion">
-    {% if user.is_authenticated %}
-     <h3>Bienvenido {{ user.username }}!</h3>
-    <p><a class="Boton" href="{% url 'logout' %}">Cerrar sesion</a></p>
-  {% else %}
+  {% if not user.is_authenticated %}
+    <div class="AlertaInicioDeSesion">
     <h3>Usted no inicio sesion</h3>
     <a class="Boton"  href="{% url 'login' %}">Iniciar sesion</a>
+    </div>
   {% endif %}
-
-
-</div>
 
 {% endblock %}
