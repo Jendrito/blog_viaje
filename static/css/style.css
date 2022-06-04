@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(204, 235, 236);
+}
+footer{
+    bottom: 0%;
+    position: fixed;
+    background-color: rgb(234, 245, 245);
+    padding: 14px;
+    width: 100%;
+}
+
+.Boton{
+    padding: 6px ;
+    background-color: aliceblue;
+    box-shadow: 1px 1px 1px 2px rgb(0, 0, 0, 0.1);
+    
+}
+.AlertaInicioDeSesion{
+    box-shadow: 1px 1px 1px 2px rgb(0, 0, 0, 0.1) ;
+    padding: 2%;
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 3%;
+    background-color: rgb(230, 244, 254);
+}
+
+.AlertaInicioDeSesion:hover{
+    padding: 4%;
+    box-shadow: 1px 1px 1px 3px rgb(0, 0, 0, 0.1) ;
+    cursor: pointer;
+
+}

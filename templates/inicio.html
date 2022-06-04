@@ -5,5 +5,16 @@ Inicio
 {% endblock %}
 
 {% block contenido %}
-<h1>Aca va el contenido del inicio</h1>
+<div class="AlertaInicioDeSesion">
+    {% if user.is_authenticated %}
+     <h3>Bienvenido {{ user.username }}!</h3>
+    <p><a class="Boton" href="{% url 'logout' %}">Cerrar sesion</a></p>
+  {% else %}
+    <h3>Usted no inicio sesion</h3>
+    <a class="Boton"  href="{% url 'login' %}">Iniciar sesion</a>
+  {% endif %}
+
+
+</div>
+
 {% endblock %}
