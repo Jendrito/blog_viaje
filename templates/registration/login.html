@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block titulo %}
-Inicio
+Iniciar sesión
 {% endblock %}
 
 {% block contenido %}
-    <h2>Iniciar sesion</h2>
+    <h2>Iniciar sesión</h2>
     <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Iniciar sesion</button>
+    <button type="submit">Iniciar sesión</button>
     </form>
 {% endblock %}

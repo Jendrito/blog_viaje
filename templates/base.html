@@ -30,18 +30,18 @@
                         <a class="nav-link" href="/ver-experiencias/">Experiencias <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/ver-tramites/">Tramites</a>
+                        <a class="nav-link" href="/ver-tramites/">Trámites</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/contacto/">Contacto</a>
                     </li>
                     {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'logout' %}">Cerrar sesion</a>
+                            <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'login' %}">Iniciar sesion</a>
+                            <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
                         </li>
                     {% endif %}
                     <li class="nav-item">
@@ -50,8 +50,8 @@
                 </ul>
                 </form>
                 <form class="form-inline my-2 my-lg-0" action ="/search_experiencias_view/" method = "GET">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search" name = 'search'>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <input class="form-control mr-sm-2" type="text" placeholder="¿Qué querés buscar?" aria-label="Search" name = 'search'>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
                 </form>
             </div>
         

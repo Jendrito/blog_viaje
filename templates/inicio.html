@@ -7,9 +7,14 @@ Inicio
 {% block contenido %}
   {% if not user.is_authenticated %}
     <div class="AlertaInicioDeSesion">
-    <h3>Usted no inicio sesion</h3>
-    <a class="Boton"  href="{% url 'login' %}">Iniciar sesion</a>
+    <h3>Usted no inicio sesión</h3>
+    <a class="Boton"  href="{% url 'login' %}">Iniciar sesión</a>
+    <br>
+    <br>
+    <a class="Boton"  href="{% url 'registro' %}">¡Registrate!</a>
     </div>
+
+
   {% endif %}
 
 {% endblock %}

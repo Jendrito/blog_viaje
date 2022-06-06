@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block titulo %}
-Tramites
+Trámites
 {% endblock %}
 
 {% block contenido %}
-<h1>Tramites</h1>
+<h1>Trámites</h1>
 <div class="d-flex" style="margin-top:5rem; margin-left:7rem">
     {% for tramite  in  tramites %}
 
@@ -21,4 +21,7 @@ Tramites
 
     {% endfor %}
 </div>
+<br>
+<br>
+<a href="/crear-tramites/" class="btn btn-primary">¡Agregá tú trámite!</a>
 {% endblock %}
