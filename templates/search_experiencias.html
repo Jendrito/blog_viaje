@@ -18,7 +18,6 @@
                 <p class="card-text">{{experiencia.pais}}</p>
                 <p class="card-text">{{experiencia.fecha}}</p>
                 <p class="card-text">{{experiencia.autor}}</p>
-                <a href="#" class="btn btn-primary">Comprar!</a>
             </div>
         </div>
 
@@ -30,11 +29,12 @@
                         <h5 class="card-title">{{tramite.nombre_tramites}}</h5>
                         <p class="card-text">{{tramite.pais}}</p>
                         <p class="card-text">{{tramite.descripcion}}</p>
-                        <a href="#" class="btn btn-primary">Comprar!</a>
+        
                     </div>
                 </div>
 
         {% endfor %}
+
     {% else %}
         <h1>No se encontro tu busqueda</h1>
     {% endif %}

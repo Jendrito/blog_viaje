@@ -11,8 +11,8 @@ def login(request):
 
 def search_experiencias_view(request):
     print(request.GET)
-    experiencias = Experiencias.objects.filter(titulo__contains = request.GET['search'])
-    tramites = Tramites.objects.filter( nombre_tramites__contains= request.GET['search'])
+    experiencias = Experiencias.objects.filter(pais__contains = request.GET['search'])
+    tramites = Tramites.objects.filter( pais__contains= request.GET['search'])
     context = {'experiencias':experiencias, 'tramites':tramites}
 
     return render(request, 'search_experiencias.html', context = context)
