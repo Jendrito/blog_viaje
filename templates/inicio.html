@@ -13,6 +13,9 @@ Inicio
     <br>
     <a class="Boton"  href="{% url 'registro' %}">¡Registrate!</a>
     </div>
+    
+  {% else %}
+    <h1>¡Bienvenido, {{user}}!</h1>
 
 
   {% endif %}

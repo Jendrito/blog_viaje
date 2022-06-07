@@ -15,7 +15,7 @@ Trámites
             <h5 class="card-title">{{tramite.nombre_tramites}}</h5>
             <p class="card-text">{{tramite.pais}}</p>
             <p class="card-text">{{tramite.descripcion}}</p>
-            <a href="#" class="btn btn-primary">Ver mas!</a>
+            
         </div>
     </div>
 
@@ -23,5 +23,8 @@ Trámites
 </div>
 <br>
 <br>
-<a href="/crear-tramites/" class="btn btn-primary">¡Agregá tú trámite!</a>
+{% if user.is_authenticated %}
+    <a href="/crear-experiencias/" class="btn btn-primary">¡Agregá tú trámite!</a>
+{% endif %}
+
 {% endblock %}

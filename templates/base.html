@@ -39,14 +39,17 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
                         </li>
+                        
+                        
                     {% else %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/registro/">Registrarse</a>
+                        </li>
                     {% endif %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="/registro/">Registrarse</a>
-                    </li>
+                   
                 </ul>
                 </form>
                 <form class="form-inline my-2 my-lg-0" action ="/search_experiencias_view/" method = "GET">
@@ -67,9 +70,7 @@
     
 </body>
     <footer>
-        <p>Este es el footer</p>
-
-    
+        <p>© Copyright Carolina Mogni, Demián Gómez y Esteban Lavezzo</p><p>blog-viaje@gmail.com</p>
     </footer>
 </body>
 

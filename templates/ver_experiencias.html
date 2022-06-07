@@ -17,7 +17,7 @@ Experiencias
             <p class="card-text">{{experiencia.fecha}}</p>
             <p class="card-text">{{experiencia.autor}}</p>
             <p class="card-text">{{experiencia.cuerpo}}</p>
-            <a href="#" class="btn btn-primary">Ver mas!</a>
+        
         </div>
     </div>
 
@@ -25,5 +25,9 @@ Experiencias
 </div>
 <br>
 <br>
-<a href="/crear-experiencias/" class="btn btn-primary">¿Querés compartir tú experiencia?</a>
+{% if user.is_authenticated %}
+    <a href="/crear-experiencias/" class="btn btn-primary">¿Querés compartir tú experiencia?</a>
+{% endif %}
+
+
 {% endblock %}
