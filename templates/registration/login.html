@@ -5,10 +5,13 @@ Iniciar sesión
 {% endblock %}
 
 {% block contenido %}
-    <h2>Iniciar sesión</h2>
-    <form method="post">
+<h2 style="margin-left:30rem">Complete los campos para iniciar sesion</h2>
+<h3>{{errors}}</h3>
+<form action="" method="POST" style="margin-left:40rem;margin-top:7rem">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Iniciar sesión</button>
-    </form>
+    <table>
+        {{form.as_table}}
+    </table>
+    <input type="submit", value="Ingresar">
+</form>
 {% endblock %}
