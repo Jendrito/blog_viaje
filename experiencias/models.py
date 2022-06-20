@@ -6,4 +6,11 @@ class Experiencias (models.Model):
     fecha = models.DateTimeField(null=True)
     autor = models.CharField(max_length=50)
     cuerpo = models.CharField(max_length=10000)
+    
+    class Meta:
+        verbose_name = 'Experiencias'
+        verbose_name_plural = 'Experiencias'
+
+    def _str_(self):
+        return self.titulo
 

@@ -3,6 +3,9 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import User_registration_form
+from .models import PerfilUsuario
+from django.views.generic import  DetailView, DeleteView, UpdateView
+from django.urls import reverse
 # Create your views here.
 
 
@@ -57,3 +60,12 @@ def login_vista(request):
 def logout_vista(request):
     logout(request)
     return redirect('inicio')
+
+class Update_perfil(UpdateView):
+    model = PerfilUsuario
+    template_name = 'update_perfil.html'
+    fields = '_all_'
+
+
+    def get_success_url(self):
+        return reverse('perfil', kwargs = {'pk':self.object.pk})
