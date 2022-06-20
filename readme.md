@@ -3,7 +3,7 @@
 
 ## Descarga
     Desde una consola o el bash de git usar el siguiente comando
-        git clone https://github.com/Jendrito/blog_viaje
+        git clone https://github.com/Jendrito/blog_viaje-GomezMogniLavezzo.git
 
 
 ## Instalacion:
