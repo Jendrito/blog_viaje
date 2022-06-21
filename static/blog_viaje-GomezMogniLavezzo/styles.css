@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(204, 235, 236);
+    background-color: rgb(232, 216, 197);
 }
 footer{
     bottom: 0%;
@@ -21,7 +21,7 @@ footer{
     width: 20%;
     margin-left: 40%;
     margin-top: 3%;
-    background-color: rgb(230, 244, 254);
+    background-color: rgb(233, 212, 157);
 }
 
 .AlertaInicioDeSesion:hover{

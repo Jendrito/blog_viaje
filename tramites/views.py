@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from tramites.models import Tramites
 from .forms import Tramites_form
+from django.views.generic import  DetailView,  DeleteView, UpdateView
+from django.urls import reverse
 
 def ver_tramites(request):
     tramites = Tramites.objects.all()
@@ -24,4 +26,17 @@ def crear_tramites(request):
         return redirect('/ver-tramites')
 
 
+class Delete_tramites(DeleteView):
+    model = Tramites
+    template_name = "borrar_tramites.html"
 
+    def get_success_url(self):
+        return reverse('ver-tramites')
+
+class Update_tramites(UpdateView):
+    model = Tramites
+    template_name = 'actualizar_tramites.html'
+    fields = 'nombre_tramites', 'pais', 'descripcion'
+
+    def get_success_url(self):
+        return reverse('ver-tramites', kwargs = {'pk':self.object.pk})

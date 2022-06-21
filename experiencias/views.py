@@ -34,13 +34,12 @@ class Delete_experiencias(DeleteView):
     template_name = "borrar_experiencias.html"
 
     def get_success_url(self):
-        return reverse('ver_experiencias')
+        return reverse('ver-experiencias')
 
 class Update_experiencias(UpdateView):
     model = Experiencias
     template_name = 'actualizar_experiencias.html'
-    fields = '_all_'
-
+    fields = 'titulo', 'pais', 'cuerpo', 'fecha', 'autor'
 
     def get_success_url(self):
-        return reverse('ver_experiencias', kwargs = {'pk':self.object.pk})
+        return reverse('ver-experiencias', kwargs = {'pk':self.object.pk})
