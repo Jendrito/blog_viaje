@@ -2,12 +2,14 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import User_registration_form
+from .forms import  UserEditForm
 from django.contrib.auth.models import User
 from django.views.generic import  DetailView, DeleteView, UpdateView
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
+
+
 
 def register(request):
     if request.method == 'POST':
@@ -61,11 +63,21 @@ def logout_vista(request):
     logout(request)
     return redirect('inicio')
 
-class Update_perfil(UpdateView):
-    model = User
-    template_name = 'update_perfil.html'
-    fields = '_all_'
-
-
-    def get_success_url(self):
-        return reverse('perfil', kwargs = {'pk':self.object.pk})
+@login_required
+def editarPerfil(request):
+    if request.method == 'GET':
+        form = UserEditForm()
+        context = {'form':form}
+        return render(request, 'editar_perfil.html', context=context)
+    else:
+        form = UserEditForm(request.POST)
+        if form.is_valid():
+            
+            Perfil = User.objects.all(
+                username = form.cleaned_data['username'],
+                email = form.cleaned_data['email'],
+                password = form.cleaned_data['password'],
+                save = form.save()
+            )
+            context ={'Perfil':Perfil}
+        return redirect('/')
