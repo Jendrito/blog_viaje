@@ -18,7 +18,7 @@
 
     <header>
         <nav class="navbar navbar-expand-lg navbar " style="background-color: rgb(23, 23, 22);" >
-            <a class="navbar-brand text-white" href="/">Inicio</a>
+            <a class="navbar-brand text-white" href="/"><b>Inicio</b></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -39,11 +39,10 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{% url 'logout' %}">Cerrar sesión</a>
                         </li>
-                        <li class="nav-item" style="margin-right: 2rem">
-                            <a class="nav-link text-white" style="margin-left:30rem ;"> <img src="{{request.user.imagen.url}}"> {{request.user.username}} </a>
+                        <li class="nav-item" >
+                            <a class="nav-link text-white" style="margin-left:30rem ; " href="#"> <img src="{{request.user.user_profile.imagen.url}}" width="30px" height="30px" style=" margin-top:2.5%;  "> <b >{{request.user.username}}</b></a>
                         </li>
                        
-                    
                     {% else %}
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{% url 'login' %}">Iniciar sesión</a>

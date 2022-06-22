@@ -3,22 +3,23 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import User_registration_form
-from .models import User
+from django.contrib.auth.models import User
 from django.views.generic import  DetailView, DeleteView, UpdateView
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
-@csrf_exempt
 def register(request):
     if request.method == 'POST':
         form = User_registration_form(request.POST)
 
         if form.is_valid():
             form.save()
-            user = form.save()
-            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
-            context = {'message':f'Usuario creado correctamente, bienvenido {User.username}'}
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
+            user = authenticate(username = username, password = password)
+            login(request, user)
+            context = {'message':f'Usuario creado correctamente, bienvenido {username}'}
             return render(request, 'inicio.html', context = context)
         else:
             errors = form.errors
