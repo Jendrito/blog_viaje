@@ -1,9 +1,11 @@
+from multiprocessing import context
+from urllib import request
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import  UserEditForm
-from django.contrib.auth.models import User
+from .models import User
+from .forms import  User_registration_form
 from django.views.generic import  DetailView, DeleteView, UpdateView
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
@@ -63,21 +65,19 @@ def logout_vista(request):
     logout(request)
     return redirect('inicio')
 
-@login_required
-def editarPerfil(request):
-    if request.method == 'GET':
-        form = UserEditForm()
-        context = {'form':form}
-        return render(request, 'editar_perfil.html', context=context)
-    else:
-        form = UserEditForm(request.POST)
-        if form.is_valid():
+class editarPerfil(UpdateView):
+    model = User
+    template_name = 'editar_perfil.html'
+    fields = 'username', 'email', 'redes_sociales', 'descripcion','telefono'
+
+
+    def get_success_url(self):
+        return reverse('editarPerfil', kwargs = {'pk':self.object.pk})
+
+
             
-            Perfil = User.objects.all(
-                username = form.cleaned_data['username'],
-                email = form.cleaned_data['email'],
-                password = form.cleaned_data['password'],
-                save = form.save()
-            )
-            context ={'Perfil':Perfil}
-        return redirect('/')
+class Perfil(DetailView):
+    model = User
+    template_name= 'perfil.html'
+    def get_success_url(self):
+        return reverse('Perfil', kwargs = {'pk':self.object.pk})

@@ -1,10 +1,11 @@
-from django.contrib import admin
+
 from django.urls import path, include
-from .views import logout_vista, register, login_vista, editarPerfil
+from .views import editarPerfil, logout_vista, register, login_vista, editarPerfil, Perfil
 
 urlpatterns = [
     path("registro/", register  , name="registro"),
     path("login/", login_vista , name="login"),
     path("logout/", logout_vista  , name="logout"),
-    path("editarPerfil/", editarPerfil , name="editarPerfil"),
+    path("Perfil/<int:pk>/",Perfil.as_view() , name="Perfil"),
+    path("editarPerfil/<int:pk>/", editarPerfil.as_view() , name="editarPerfil"),
 ]
