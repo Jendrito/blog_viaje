@@ -136,7 +136,7 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STATIC_URL = 'static/css/'
+STATIC_URL = 'static/blog_viaje-GomezMogniLavezzo/'
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",

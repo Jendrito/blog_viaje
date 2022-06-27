@@ -7,26 +7,14 @@ Experiencias
 {% block contenido %}
 {% if form %}
 
-    <form action="" method="POST" >
+    <form enctype="multipart/form-data" action="" method="POST" class="AlertaInicioDeSesion overflow-auto" style="width: 500px;margin-top: 1%;margin-left: 30%;">
         {% csrf_token %}
         <table>
-            {{form.as_table}}
+            <h3>Contanos tu experiencia!!!</h3>
+            <b>{{form.as_table}}</b>
         </table>
-        <input type="submit", value="Enviar!">
+        <input type="submit", value="Enviar!" class="Boton">
     </form>
-    
-{% elif new_experiencia %}
-
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">{{experiencia.titulo}}</h5>
-            <p class="card-text">{{experiencia.pais}}</p>
-            <p class="card-text">{{experiencia.fecha}}</p>
-            <p class="card-text">{{experiencia.autor}}</p>
-            <p class="card-text">{{experiencia.cuerpo}}</p>
-        </div>
-    </div>
-
 {% endif %}
+
 {% endblock %}

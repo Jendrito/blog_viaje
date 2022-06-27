@@ -17,7 +17,7 @@
     
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar " style="background-color: rgb(23, 23, 22);" >
+        <nav class="navbar navbar-expand-lg navbar " style="background-color: rgb(94, 175, 228);" >
             <a class="navbar-brand text-white" href="/"><b>Inicio</b></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,15 +32,19 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="/ver-tramites/">Trámites</a>
                     </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link text-white" href="/contacto/">Contacto</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a class="nav-link text-white" href="/nosotros/">Nosotros</a>
                     </li>
                     {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{% url 'logout' %}">Cerrar sesión</a>
                         </li>
                         <li class="nav-item" >
-                            <a class="nav-link text-white" style="margin-left:30rem ; " href="/Perfil/{{user.id}}/"> <img src="{{request.user.user_profile.imagen.url}}" width="30px" height="30px" style=" margin-top:2.5%;  "> <b >{{request.user.username}}</b></a>
+                            <a class="nav-link text-white" style="margin-left:12rem ; " href="/Perfil/{{user.id}}/"> <img src="{{request.user.user_profile.imagen.url}}" width="30px" height="30px" style=" margin-top:2.5%;  "> <b >{{request.user.username}}</b></a>
                         </li>
                        
                     {% else %}
@@ -60,7 +64,7 @@
                 </form>
                 <form class="form-inline my-2 my-lg-0" action ="/search_experiencias_view/" method = "GET">
                     <input class="form-control mr-sm-2" type="text" placeholder="Buscar por pais" aria-label="Search" name = 'search'>
-                    <button class="btn btn-outline-success my-2 my-sm-0  " type="submit">Buscar</button>
+                    <button class="BotonBuscador " type="submit">Buscar</button>
                 </form>
             </div>
         
@@ -72,9 +76,7 @@
         {% block contenido %}
         {% endblock %}
     </header>
-<body>
     
-</body>
     <footer>
         <p>© Copyright Carolina Mogni, Demián Gómez y Esteban Lavezzo</p><p>blog-viaje@gmail.com</p>
     </footer>

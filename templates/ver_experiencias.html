@@ -5,28 +5,31 @@ Experiencias
 {% endblock %}
 
 {% block contenido %}
-<h1>Experiencias de viajeros</h1>
-<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
+<div class="d-flex " style="margin-top:1rem; margin-left:7rem;">
     {% for experiencia  in  experiencias %}
 
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+    <div class="card " style="width: 18rem;">
+        {% if experiencia.image %}
+           <img src="{{experiencia.image.url}}" style="width: 286px; height:200px ;" class="card-img-top" >
+        {% endif %}
         <div class="card-body">
             <h5 class="card-title">{{experiencia.titulo}}</h5>
             <p class="card-text">{{experiencia.pais}}</p>
             <p class="card-text">{{experiencia.fecha}}</p>
             <p class="card-text">{{experiencia.autor}}</p>
             <p class="card-text">{{experiencia.cuerpo}}</p>
-        
+            <a href="/detalle-experiencia/{{experiencia.id}}/" class="Boton">Ver mas</a>
+        {% if request.user.is_authenticated and request.user.is_superuser %}
+            <a href="/actualizar-experiencias/{{experiencia.id}}/" class="Boton">Editar</a>
+            <a href="/borrar-experiencias/{{experiencia.id}}/" class="Boton">Eliminar</a>
+        {% endif %}
         </div>
     </div>
 
     {% endfor %}
 </div>
-<br>
-<br>
 {% if user.is_authenticated %}
-    <a href="/crear-experiencias/" class="btn btn-primary">¿Querés compartir tú experiencia?</a>
+    <a href="/crear-experiencias/" class="btn text-light bg-dark">¿Querés compartir tú experiencia?</a>
 {% endif %}
 
 

@@ -11,7 +11,7 @@ Actualizar experiencia
         <form action="" method="POST" style="margin-left:40rem;margin-top:7rem">
             {% csrf_token %}
             <table>
-                {{form.as_table}}
+                <b>{{form.as_table}}</b>
             </table>
             <input type="submit" , value="Enviar">
         </form>

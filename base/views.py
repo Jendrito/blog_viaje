@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import render
 from experiencias.models import Experiencias
 from tramites.models import Tramites
@@ -16,3 +17,7 @@ def search_experiencias_view(request):
     context = {'experiencias':experiencias, 'tramites':tramites}
 
     return render(request, 'search_experiencias.html', context = context)
+
+def nosotros(request):
+    context={nosotros:'nosotros'}
+    return render(request, 'nosotros.html', context = context)

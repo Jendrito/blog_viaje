@@ -1,42 +1,40 @@
 from django.shortcuts import render, redirect
 from tramites.models import Tramites
 from .forms import Tramites_form
-from django.views.generic import  DetailView,  DeleteView, UpdateView
+from django.views.generic import  DetailView,  DeleteView, UpdateView, CreateView
 from django.urls import reverse
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
 def ver_tramites(request):
     tramites = Tramites.objects.all()
     context = {'tramites':tramites}
     return render(request, 'ver_tramites.html', context=context)
 
-def crear_tramites(request):
-    if request.method == 'GET':
-        form = Tramites_form()
-        context = {'form':form}
-        return render(request, 'crear_tramites.html', context=context)
-    else:
-        form = Tramites_form(request.POST)
-        if form.is_valid():
-            new_tramite = Tramites.objects.create(
-                nombre_tramites = form.cleaned_data['nombre_tramites'],
-                pais = form.cleaned_data['pais'],
-                descripcion = form.cleaned_data['descripcion'],
-            )
-            context ={'new_tramite':new_tramite}
-        return redirect('/ver-tramites')
+class Create_tramites(CreateView, LoginRequiredMixin):
+    model = Tramites
+    template_name = 'crear_tramites.html'
+    fields =  '__all__'
+
+    def get_success_url(self):
+        return reverse('detalle-tramite', kwargs={'pk':self.object.pk})
 
 
-class Delete_tramites(DeleteView):
+class Detail_tramite(DetailView, LoginRequiredMixin):
+    model = Tramites
+    template_name= 'detalle_tramite.html'
+
+class Delete_tramites(DeleteView, LoginRequiredMixin):
     model = Tramites
     template_name = "borrar_tramites.html"
 
     def get_success_url(self):
         return reverse('ver-tramites')
 
-class Update_tramites(UpdateView):
+class Update_tramites(UpdateView, LoginRequiredMixin):
     model = Tramites
     template_name = 'actualizar_tramites.html'
-    fields = 'nombre_tramites', 'pais', 'descripcion'
+    fields = 'nombre_tramites', 'pais', 'descripcion','image'
 
     def get_success_url(self):
-        return reverse('ver-tramites', kwargs = {'pk':self.object.pk})
+        return reverse('detalle-tramite', kwargs = {'pk':self.object.pk})

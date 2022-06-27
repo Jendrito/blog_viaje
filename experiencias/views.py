@@ -1,45 +1,43 @@
+from urllib import request
 from django.shortcuts import render, redirect
 from experiencias.models import Experiencias
 from experiencias.forms import Experiencias_form
 from django.urls import reverse
-from django.views.generic import  DetailView,  DeleteView, UpdateView
+from django.views.generic import  DetailView,  DeleteView, UpdateView, CreateView
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 def ver_experiencias(request):
     experiencias = Experiencias.objects.all()
     context = {'experiencias':experiencias}
     return render(request, 'ver_experiencias.html', context=context)
    
-#def crear_experiencias(request):
+class Create_experiencias(CreateView, LoginRequiredMixin):
+    model = Experiencias
+    template_name = 'crear_experiencia.html'
+    fields = '__all__'
 
-def crear_experiencias(request):
-    if request.method == 'GET':
-        form = Experiencias_form()
-        context = {'form':form}
-        return render(request, 'crear_experiencia.html', context=context)
-    else:
-        form = Experiencias_form(request.POST)
-        if form.is_valid():
-            new_experiencia = Experiencias.objects.create(
-                titulo = form.cleaned_data['titulo'],
-                pais = form.cleaned_data['pais'],
-                cuerpo = form.cleaned_data['cuerpo'],
-                fecha = form.cleaned_data['fecha'],
-                autor = form.cleaned_data['autor'],
-            )
-            context ={'new_experiencia':new_experiencia}
-        return redirect('/ver-experiencias')
+    def get_success_url(self):
+        return reverse('detalle-experiencia', kwargs={'pk':self.object.pk})
 
-class Delete_experiencias(DeleteView):
+class Detail_experiencias(DetailView, LoginRequiredMixin):
+    model = Experiencias
+    template_name= 'detalle_experiencia.html'
+
+class Delete_experiencias(DeleteView, LoginRequiredMixin):
     model = Experiencias
     template_name = "borrar_experiencias.html"
 
     def get_success_url(self):
         return reverse('ver-experiencias')
 
-class Update_experiencias(UpdateView):
+class Update_experiencias(UpdateView, LoginRequiredMixin):
     model = Experiencias
     template_name = 'actualizar_experiencias.html'
-    fields = 'titulo', 'pais', 'cuerpo', 'fecha', 'autor'
+    fields = 'titulo', 'pais', 'cuerpo', 'fecha', 'autor', 'image'
+
 
     def get_success_url(self):
-        return reverse('ver-experiencias', kwargs = {'pk':self.object.pk})
+        return reverse('detalle-experiencia', kwargs = {'pk':self.object.pk})
+    

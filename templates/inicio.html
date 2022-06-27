@@ -7,10 +7,11 @@ Inicio
 {% block contenido %}
   {% if not user.is_authenticated %}
     <div class="AlertaInicioDeSesion">
-    <h3>Usted no inicio sesión</h3>
+    <h3>¿Ya tienes una cuenta? puedes</h3>
     <a class="Boton"  href="{% url 'login' %}">Iniciar sesión</a>
     <br>
     <br>
+    <h3>de no ser el caso...</h3>
     <a class="Boton"  href="{% url 'registro' %}">¡Registrate!</a>
     </div>
     
