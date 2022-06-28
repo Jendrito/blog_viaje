@@ -67,11 +67,11 @@ def logout_vista(request):
 class editarPerfil(UpdateView):
     model = User
     template_name = 'editar_perfil.html'
-    fields = 'username', 'email', 'redes_sociales', 'descripcion','telefono'
+    fields = 'username', 'email', 'redes_sociales', 'descripcion','telefono','image'
 
 
     def get_success_url(self):
-        return reverse('editarPerfil', kwargs = {'pk':self.object.pk})
+        return reverse('Perfil', kwargs = {'pk':self.object.pk})
 
 
             

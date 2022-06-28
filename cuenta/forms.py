@@ -16,7 +16,7 @@ class User_registration_form(UserCreationForm):
 class Perfil(forms.ModelForm):
     class Meta:
         model = User
-        fields = ['username', 'email', 'redes_sociales', 'descripcion','telefono' ]
+        fields = ['username', 'email', 'redes_sociales', 'descripcion','telefono','image' ]
         help_texts = {k:'' for k in fields}
 
         

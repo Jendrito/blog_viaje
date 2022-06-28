@@ -8,7 +8,7 @@ Actualizar experiencia
 
     {% if form %}
         <h2 style="margin-left:30rem">Complete los campos a actualizar</h2>
-        <form action="" method="POST" style="margin-left:40rem;margin-top:7rem">
+        <form enctype="multipart/form-data" action="" method="POST" style="margin-left:40rem;margin-top:7rem">
             {% csrf_token %}
             <table>
                 <b>{{form.as_table}}</b>

@@ -1,4 +1,6 @@
+from tkinter import Widget
 from django.db import models
+from cuenta.models import User
 
 class Experiencias (models.Model):
     titulo = models.CharField(max_length=100)

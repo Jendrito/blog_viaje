@@ -5,13 +5,14 @@
 {% endblock %}
 
 {% block contenido %}
-<h1>Aca va el contenido de buscar productos</h1>
 <div class="d-flex" style="margin-top:5rem; margin-left:7rem">
     {% if  tramites or experiencias   %}
         {% for experiencia in experiencias  %}
 
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+            {% if experiencia.image %}
+            <img src="{{experiencia.image.url}}" style="min-width: 250px; min-height:200px;max-width: 2000px; max-height:200px;" class="card-img-top" >
+            {% endif %}
             <div class="card-body">
                 <h5 class="card-title">{{experiencia.titulo}}</h5>
                 <p class="card-text">{{experiencia.cuerpo}}</p>
@@ -24,7 +25,9 @@
         {% endfor %}
         {% for tramite in tramites  %}
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+                    {% if tramite.image %}
+                    <img src="{{tramite.image.url}}" style="min-width: 250px; min-height:200px;max-width: 300px; max-height:200px;" class="card-img-top" >
+                    {% endif %}
                     <div class="card-body">
                         <h5 class="card-title">{{tramite.nombre_tramites}}</h5>
                         <p class="card-text">{{tramite.pais}}</p>
