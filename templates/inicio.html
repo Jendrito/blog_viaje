@@ -1,12 +1,29 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block titulo %}
 Inicio
 {% endblock %}
 
 {% block contenido %}
   {% if not user.is_authenticated %}
-    <div class="AlertaInicioDeSesion">
+  <div id="carouselExampleSlidesOnly " data-interval="3000" class="carousel slide" data-ride="carousel" style="width: 900px; height: 20px;margin-right: 0%;">
+    <div class="carousel-inner" >
+      <div class="carousel-item active" data-interval="3000" >
+          <img src="media\imagenes_Imagenes_Inicio\Thailand.jpg" class="d-block w-100" style="width: 900px; height: 400px; margin-top: 3%; margin-left: 3%;margin-right: 0%;  ">
+      </div>
+      <div class="carousel-item" data-interval="3000">
+        <img src="media\imagenes_Imagenes_Inicio\nuevayork.jpg" class="d-block w-100" style="width: 900px; height: 400px; margin-top: 3%; margin-left: 3%;margin-right: 0%;">
+      </div>
+      <div class="carousel-item" data-interval="3000">
+        <img src="media\imagenes_Imagenes_Inicio\noruega.jpg" class="d-block w-100" style="width: 900px; height: 400px; margin-top: 3%; margin-left: 3%;margin-right: 0%;">
+      </div>
+      <div class="carousel-item" data-interval="3000">
+        <img src="media\imagenes_Imagenes_Inicio\Ushuaia.jpg" class="d-block w-100" style="width: 900px; height: 400px; margin-top: 3%; margin-left: 3%;margin-right: 0%;">
+      </div>
+    </div>
+
+  </div>
+    <div class="Formularioinicio">
     <h3>¿Ya tienes una cuenta? puedes</h3>
     <a class="Boton"  href="{% url 'login' %}">Iniciar sesión</a>
     <br>
@@ -14,10 +31,14 @@ Inicio
     <h3>de no ser el caso...</h3>
     <a class="Boton"  href="{% url 'registro' %}">¡Registrate!</a>
     </div>
-    
+   
   {% else %}
-    <h1>¡Bienvenido, {{user}}!</h1>
-
+    <h1 class="Bienvenida">
+      ¡Bienvenido, {{user}}!
+      {% if user.image %}
+      <img src="{{user.image.url}}" width="200px" height="200px" style="border-style: solid; border-color: rgb(37, 99, 181); margin-left: 25%; margin-top: 2%; ">
+      {% endif %}
+    </h1>
 
   {% endif %}
 

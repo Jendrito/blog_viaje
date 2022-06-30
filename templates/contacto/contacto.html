@@ -5,7 +5,7 @@ Contacto
 {% endblock %}
 
 {% block contenido %}
-  <form method="post" class="AlertaInicioDeSesion overflow-auto" style="width: 370px; margin-top: 1% ;">
+  <form method="post" class="FormularioContacto" style="width: 370px; margin-top: 1% ;">
       <h3>Esperamos tu mensaje!!!</h3>
       {% csrf_token %}
       <b>{{ form.as_p }}</b>

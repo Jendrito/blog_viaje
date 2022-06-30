@@ -28,11 +28,11 @@ def register(request):
             errors = form.errors
             form = User_registration_form()
             context = {'errors':errors, 'form':form}
-            return render(request, 'registration/signup.html', context = context)
+            return render(request, 'registro/signup.html', context = context)
     else:
         form = User_registration_form()
         context = {'form':form}
-        return render(request, 'registration/signup.html', context =context)
+        return render(request, 'registro/signup.html', context =context)
 
 @csrf_exempt
 def login_vista(request):
@@ -48,16 +48,16 @@ def login_vista(request):
             else:
                 context = {'errors':'No hay ningun usuario con esas credenciales!!!'}
                 form = AuthenticationForm()
-                return render(request, 'registration/login.html', context = context)
+                return render(request, 'registro/login.html', context = context)
         else:
             errors = form.errors
             form = AuthenticationForm()
             context = {'errors':errors, 'form':form} 
-            return render(request, 'registration/login.html', context = context)
+            return render(request, 'registro/login.html', context = context)
     else:
         form = AuthenticationForm()
         context = {'form':form}
-        return render(request, 'registration/login.html', context = context)
+        return render(request, 'registro/login.html', context = context)
 
 
 def logout_vista(request):
@@ -66,7 +66,7 @@ def logout_vista(request):
 
 class editarPerfil(UpdateView):
     model = User
-    template_name = 'editar_perfil.html'
+    template_name = 'registro/editar_perfil.html'
     fields = 'username', 'email', 'redes_sociales', 'descripcion','telefono','image'
 
 
@@ -77,6 +77,6 @@ class editarPerfil(UpdateView):
             
 class Perfil(DetailView):
     model = User
-    template_name= 'perfil.html'
+    template_name= 'registro/perfil.html'
     def get_success_url(self):
         return reverse('Perfil', kwargs = {'pk':self.object.pk})

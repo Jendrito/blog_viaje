@@ -19,9 +19,9 @@ def contacto(request):
             except BadHeaderError:
                 return HttpResponse('Error')
             return redirect('exitos')
-    return render(request, "contacto.html", {'form': form})
+    return render(request, "contacto/contacto.html", {'form': form})
 
 def exitos(request):
-    return render(request, 'exitos.html', )
+    return render(request, 'contacto/exitos.html', )
 
     

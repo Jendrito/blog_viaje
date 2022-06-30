@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Actualizar experiencia
+{% endblock %}
+
+{% block contenido %}
+
+    {% if form %}
+        <form enctype="multipart/form-data" action="" method="POST" class="FormularioActualizar" >
+            {% csrf_token %}
+            <h2 >Complete los campos a actualizar</h2>
+            <br/>
+            <table >
+                <b >{{form.as_table}}</b>
+            </table>
+            <input type="submit" class="Boton" , value="Enviar" >
+        </form>
+    {% endif %}
+
+{% endblock %}
