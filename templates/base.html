@@ -60,10 +60,12 @@
                 
                 
                 {% if user.is_authenticated %}
-                    <div class="btn-group" style="margin-left:25rem ;">
+                    <div class="btn-group" style="margin-left:27rem ;">
                         <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >
                             {% if user.image %}
                                <img src="{{user.image.url}}" width="35px" height="35px" style=" margin-top:2.5%;border-style: solid; border-color: rgb(1, 75, 173);  ">
+                            {% else %}   
+                               <img src="\media\imagenes_User\usuariodefault.jpg" width="35px" height="35px" style=" margin-top:2.5%;border-style: solid; border-color: rgb(1, 75, 173);  ">
                             {% endif %}
                         </button>
                         <div class="dropdown-menu">
