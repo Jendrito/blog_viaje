@@ -7,35 +7,43 @@
 {% block contenido %}
 <div class="d-flex" style="margin-top:5rem; margin-left:7rem">
     {% if  tramites or experiencias   %}
-        {% for experiencia in experiencias  %}
+        {% for experiencia  in  experiencias %}
 
-        <div class="card" style="width: 18rem;">
+        <div class="card " style="width: 18rem;">
             {% if experiencia.image %}
             <img src="{{experiencia.image.url}}" style="min-width: 250px; min-height:200px;max-width: 2000px; max-height:200px;" class="card-img-top" >
             {% endif %}
             <div class="card-body">
-                <h5 class="card-title">{{experiencia.titulo}}</h5>
-                <p class="card-text">{{experiencia.cuerpo}}</p>
-                <p class="card-text">{{experiencia.pais}}</p>
-                <p class="card-text">{{experiencia.fecha}}</p>
-                <p class="card-text">{{experiencia.autor}}</p>
+                <h5 class="card-title"><b>{{experiencia.titulo}}</b></h5>
+                <p class="card-text"><b>Pais:</b> {{experiencia.pais}}</p>
+                <p class="card-text"><b>Fecha:</b> {{experiencia.fecha}}</p>
+                <p class="card-text"><b>Autor:</b> {{experiencia.autor}}</p>
+                <a href="/detalle-experiencia/{{experiencia.id}}/" class="Boton">Ver mas</a>
+            {% if request.user.is_authenticated and request.user.is_superuser %}
+                <a href="/actualizar-experiencias/{{experiencia.id}}/" class="Boton">Editar</a>
+                <a href="/borrar-experiencias/{{experiencia.id}}/" class="Boton">Eliminar</a>
+            {% endif %}
             </div>
         </div>
 
         {% endfor %}
-        {% for tramite in tramites  %}
-                <div class="card" style="width: 18rem;">
-                    {% if tramite.image %}
-                    <img src="{{tramite.image.url}}" style="min-width: 250px; min-height:200px;max-width: 300px; max-height:200px;" class="card-img-top" >
-                    {% endif %}
-                    <div class="card-body">
-                        <h5 class="card-title">{{tramite.nombre_tramites}}</h5>
-                        <p class="card-text">{{tramite.pais}}</p>
-                        <p class="card-text">{{tramite.descripcion}}</p>
-        
-                    </div>
-                </div>
+        {% for tramite  in  tramites %}
 
+            <div class="card" style="width: 18rem;">
+                {% if tramite.image %}
+                <img src="{{tramite.image.url}}" style="min-width: 250px; min-height:200px;max-width: 300px; max-height:200px;" class="card-img-top" >
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title"><b>{{tramite.nombre_tramites}}</b></h5>
+                    <p class="card-text"><b>Pais:</b> {{tramite.pais}}</p>
+                    <a href="/detalle-tramite/{{tramite.id}}/" class="Boton">Ver mas</a>
+                {% if request.user.is_authenticated and request.user.is_superuser %}
+                    <a href="/actualizar-tramites/{{tramite.id}}/" class="Boton">Editar</a>
+                    <a href="/borrar-tramites/{{tramite.id}}/" class="Boton">Eliminar</a>
+                {% endif %}
+                </div>
+            </div>
+    
         {% endfor %}
 
     {% else %}

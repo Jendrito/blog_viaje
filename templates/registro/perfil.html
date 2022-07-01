@@ -13,7 +13,15 @@
             <img src="{{object.image.url}}" style="min-width: 250px; min-height:200px;max-width: 2000px; max-height:200px;" class="card-img-top" >
             {% endif %}
             <h5 class="card-title">{{object.username}}</h5>
-            <p class="card-text">{{object.descripcion}}</p>
+            {% if object.telefono %}
+            <p class="card-text"><b>Telefono: </b>{{object.telefono}}</p>
+            {% endif %}
+            {% if object.descripcion %}
+            <p class="card-text"> <b>Sobre mi: </b>{{object.descripcion}}</p>
+            {% endif %}
+            {% if object.redes_sociales %}
+            <p><a class="class=nav-link" href="{{object.redes_sociales}}">Mi Red Social</a></p>
+            {% endif %}
             <a href="/editarPerfil/{{object.id}}/" class="btn btn-primary">Editar perfil</a>
         </div>
     </div>
