@@ -15,10 +15,11 @@
     El proyecto está enfocado a ser un blog de viajes, dónde usuarios podrán cargar sus experiencias, trámites y ponerse en contacto con el administrador de la web. 
 
 ## Inicio
-    Una vez ejecutado el servidor, al acceder al LocalHost, se mostrará la pantilla de inico que brindará las siguientes opciones: Iniciar Sesión o Registrarse. Ambas aplicaciones se muestran además en el navbar de la web.
+    Una vez ejecutado el servidor, al acceder al LocalHost, se mostrará la pantilla de inico que brindará las siguientes opciones: Iniciar Sesión o Registrarse. Ambas aplicaciones se muestran además en el navbar de la web. Cuando estas registrado y logueado el inicio cambia a un cartel de bienvenida con tu nombre y una foto predeterminada que vas a poder editar en perfil.
 
 ## Login/Registro
     Para loguearse, hay que registrar un usuario ( En el inicio esta la opcion de registro o arriba a la derecha en la barra de navegacion) y ahí se podrá crear o visualizar experiencias y trámites. De no estar logueado, solamente se podrán visualizar. Una ve logueado si sos superusuario tambien tenes la funcionalidad de eliminar una experiencia/tramite.
+    Aclaracion: Para no tener que crear un superuser la cuenta es; username:Demian, Password: grupo3.2
 
 ## Experiencias
     En éste apartado, aparecen las experiencias cargadas en el sistema . Además,en el dropdown de la barra de navegacion, se otorga la posibilidad al usuario de crear y ver los registros. Una vez completado el mismo, se volverá a la pantalla de los detalles de la experiencia creada. En el template de ver experiencias utalizando los botones de editar experiencia se puede ver por completo, actualizar o eliminar
@@ -38,3 +39,6 @@
 
 ## Perfil
      A este apartado se puede acceder presinando en la foto de arriba a la derecha en la barra de navegacion que es una foto q funciona como dropdown y da las opciones de ir al perfil o cerrar sesion. En perfil aparecen tus datos y la opcion de editarlos.
+
+## Participacion 
+    El trabajo lo hicimos todos juntos en videollamada, ibamos turnando quien compartia pantalla y escribia codigo asi participabamos fisicamente un poco cada uno.
