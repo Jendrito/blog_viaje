@@ -11,6 +11,8 @@
         <div class="card-body">
             {% if object.image %}
             <img src="{{object.image.url}}" style="min-width: 250px; min-height:200px;max-width: 2000px; max-height:200px;" class="card-img-top" >
+            {% else %}
+            <img src="\media\imagenes_User\usuariodefault.jpg" width="200px" height="200px"   style="border-style: solid; border-color: rgb(37, 99, 181); margin-left: 4%; margin-top: 2%; "  >
             {% endif %}
             <h5 class="card-title">{{object.username}}</h5>
             {% if object.telefono %}
