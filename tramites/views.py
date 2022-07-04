@@ -34,7 +34,7 @@ class Delete_tramites(DeleteView, LoginRequiredMixin):
 class Update_tramites(UpdateView, LoginRequiredMixin):
     model = Tramites
     template_name = 'tramites/actualizar_tramites.html'
-    fields = 'nombre_tramites','pais', 'fecha', 'descripcion','image'
+    fields = 'nombre_tramites','pais', 'fecha','autor', 'descripcion','image'
 
     def get_success_url(self):
         return reverse('detalle-tramite', kwargs = {'pk':self.object.pk})
