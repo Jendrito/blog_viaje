@@ -1,5 +1,5 @@
 html{
-    height: 100%;
+    max-height: 100%;
     height: 1360px;
 }
 
@@ -8,6 +8,8 @@ body{
     max-width: 100%;
     min-width: 100%;
     position: absolute;
+    align-content: center;
+
 }
 header{
     max-width: 100%;
@@ -15,7 +17,8 @@ header{
     height: 10%;
     max-height: 10%;
     position: static;
-   
+    max-width: 100%;
+    max-height: 100%;
 }
 .footer{
     position: fixed;
@@ -23,6 +26,8 @@ header{
     color: rgb(240, 240, 240);
     width: 500px; ;
     bottom: 0%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .Boton{
@@ -33,6 +38,8 @@ header{
     border-style: initial;
     border-color: rgba(104, 104, 104, 0.949);
     text-decoration: solid;
+    max-width: 100%;
+    max-height: 100%;
 }
 .Boton:hover{
     box-shadow: 1px 1px 1px 2px rgba(34, 144, 222, 0.1) ;
@@ -40,6 +47,8 @@ header{
     color:rgb(250, 250, 250); 
     text-decoration: none;
     background-color:rgb(152, 205, 243); 
+    max-width: 100%;
+    max-height: 100%;
 }
 .BotonBuscador{
     padding: 6px ;
@@ -47,6 +56,8 @@ header{
     color: rgb(255, 255, 255);
     border-color:rgb(255, 255, 255); 
     border-style:solid;
+    max-width: 100%;
+    max-height: 100%;
 }
 .BotonBuscador:hover{
     background-color: rgb(255, 255, 255);
@@ -54,29 +65,28 @@ header{
     border-color:rgb(57, 146, 206);
     border-style:solid;
     text-decoration: solid;
+    max-width: 100%;
+    max-height: 100%;
 }
-.AlertaInicioDeSesion{
+
+.FormularioRegistro{
     display: block;
     box-shadow: 1px 1px 1px 2px rgb(0, 0, 0, 0.1) ;
-    padding: 2%;
-    width: 320px;
-    max-height: 510px;
+    padding: 0%;
+    width: 370px;
+    height: 480px;
     margin-left: 35%;
     margin-top: 1%;
     background-color:  rgb(152, 205, 243);
     color: rgb(240, 241, 242); 
     text-decoration: solid;
     text-align: center;
-    
-}
-
-.AlertaInicioDeSesion:hover{
-    box-shadow: 1px 1px 1px 3px rgb(0, 0, 0, 0.1) ;
-    cursor: pointer;
-    color:rgb(136, 181, 213);
-    background-color:rgb(240, 241, 242);; 
+    align-content: center;
+    max-width: 100%;
+    max-height: 100%;
 
 }
+
 .Formularioinicio{
     display: inline-block;
     box-shadow: 1px 1px 1px 2px rgb(0, 0, 0, 0.1) ;
@@ -88,6 +98,8 @@ header{
     background-color:  rgb(152, 205, 243);
     color: rgb(240, 241, 242); 
     text-decoration: solid;
+    max-width: 100%;
+    max-height: 100%;
     
     
 }
@@ -96,47 +108,107 @@ header{
     cursor: pointer;
     color:rgb(136, 181, 213);
     background-color:rgb(240, 241, 242);; 
+    max-width: 100%;
+    max-height: 100%;
 
+}
+
+.FormularioLogin{
+    display: block;
+    box-shadow: 1px 1px 1px 2px rgb(0, 0, 0, 0.1) ;
+    padding: 0%;
+    width: 370px;
+    height: 400px;
+    margin-left: 35%;
+    margin-top: 1%;
+    background-color:  rgb(152, 205, 243);
+    color: rgb(240, 241, 242); 
+    text-decoration: solid;
+    text-align: center;
+    align-content: center;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .Bienvenida{
     display: block;
     box-shadow: 1px 1px 1px 2px rgb(0, 0, 0, 0.1) ;
-    padding: 4%;
+    padding: 0%;
     width: 500px;
     margin-left: 30%;
     margin-top: 5%;
-    max-height: 400px;
+    height: 400px;
     background-color:  rgb(152, 205, 243);
     color: rgb(240, 241, 242); 
     text-decoration: solid;
+    text-align: center;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .Nosotros{
     display: block;
+    position: fixed;
     background-color: rgb(209, 233, 250);
     padding: 2%;
-    margin-left: 2%;
+    margin-left: 2.5%;
     margin-top: 1%;
-    width: 1300px;
-    height: 500px;
+    width: 95%;
+    height: 80%;
     box-shadow: 3px 3px 3px 3px rgb(0, 0, 0, 0.1) ;
     align-content: space-between;
+    max-width: 100%;
+    max-height: 100%;
+    
 }
 
 .Nosotros2{
     display: inline-block;
     background-color: rgb(238, 244, 255);
     margin: 20px 20px;
-    padding: 5%;
+    padding: 0%;
     margin-top: 0%;
     margin-left: 37%;
     width: 300px;
-    max-width: 300px;
     height: 450px;
     box-shadow: 3px 3px 3px 3px rgb(0.2, 0.2, 0.2, 0.2) ;
     text-align: center;
-    
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.FormularioCrearExperiencias{
+    display: block;
+    box-shadow: 1px 1px 1px 2px rgb(0, 0, 0, 0.1) ;
+    padding: 0%;
+    width: 370px;
+    height: 650px;
+    margin-left: 35%;
+    margin-top: 1%;
+    background-color:  rgb(152, 205, 243);
+    color: rgb(240, 241, 242); 
+    text-decoration: solid;
+    text-align: center;
+    align-content: center;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.FormularioCrearTramites{
+    display: block;
+    box-shadow: 1px 1px 1px 2px rgb(0, 0, 0, 0.1) ;
+    padding: 0%;
+    width: 370px;
+    height: 600px;
+    margin-left: 35%;
+    margin-top: 1%;
+    background-color:  rgb(152, 205, 243);
+    color: rgb(240, 241, 242); 
+    text-decoration: solid;
+    text-align: center;
+    align-content: center;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 
@@ -145,12 +217,14 @@ header{
     box-shadow: 1px 1px 1px 2px rgb(0, 0, 0, 0.1) ;
     padding: 2%;
     width: 800px;
-    max-height: 800px;
+    height: 650px;
     margin-left: 20%;
     margin-top: 1%;
     background-color:  rgb(152, 205, 243);
     color: rgb(240, 241, 242); 
     text-decoration: solid;
+    max-width: 100%;
+    max-height: 100%;
     
 
 }
@@ -159,44 +233,54 @@ header{
     box-shadow: 1px 1px 1px 3px rgb(0, 0, 0, 0.1) ;
     cursor: pointer;
     color:rgb(136, 181, 213);
-    background-color:rgb(240, 241, 242);; 
+    background-color:rgb(240, 241, 242);
+    max-width: 100%;
+    max-height: 100%;
 }
 
 
 .FormularioContacto{
     display: block;
     box-shadow: 1px 1px 1px 2px rgb(0, 0, 0, 0.1) ;
-    padding: 2%;
+    padding: 0%;
     width: 450px;
-    max-height: 570px;
+    height: 580px;
     margin-left: 35%;
     margin-top: 1%;
     background-color:  rgb(152, 205, 243);
     color: rgb(240, 241, 242); 
     text-decoration: solid;
     text-align: center;
+    max-width: 100%;
+    max-height: 100%;
 
 
 }
 
 .Creadores{
     background-color: rgba(44, 93, 180, 0.974) ;
-    padding: 5%;
+    padding: 1%;
     box-shadow: 1px 1px 1px 3px rgba(0, 84, 210, 0.4) ;
     color: aliceblue;
+    width: 400px;
+    height: 55px;
+    max-width: 100%;
+    max-height: 100%;
     
 }
 
-.Creadores:hover{
-    padding: 5%;
-    box-shadow: 1px 1px 1px 3px rgba(0, 138, 243, 0.4) ;
-}
 
 .NosotrosNombres{
     background-color: rgba(83, 156, 204, 0.974) ;
-    padding: 5%;
+    padding: 2%;
     box-shadow: 1px 1px 1px 3px rgba(3, 125, 255, 0.4) ;
     color: aliceblue;
+    margin-left: 17%;
+    width: 200px;
+    height: 50px;
+    max-width: 100%;
+    max-height: 100%;
+    align-content: center;
 
 }
 

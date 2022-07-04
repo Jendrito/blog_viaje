@@ -35,9 +35,10 @@ Inicio
    
   {% else %}
     <h1 class="Bienvenida">
+      <br/>
       ¡Bienvenido, {{user}}!
       {% if user.image %}
-      <img src="{{user.image.url}}" width="200px" height="200px" style="border-style: solid; border-color: rgb(37, 99, 181); margin-left: 25%; margin-top: 2%; ">
+      <img src="{{user.image.url}}" width="200px" height="200px" style="border-style: solid; border-color: rgb(37, 99, 181); margin-left: 4%; margin-top: 2%; ">
       {% endif %}
     </h1>
 

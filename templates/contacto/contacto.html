@@ -6,7 +6,9 @@ Contacto
 
 {% block contenido %}
   <form method="post" class="FormularioContacto" style="width: 370px; margin-top: 1% ;">
+    <br/>
       <h3>Esperamos tu mensaje!!!</h3>
+      <br/>
       {% csrf_token %}
       <b>{{ form.as_p }}</b>
       <div class="form-actions">
