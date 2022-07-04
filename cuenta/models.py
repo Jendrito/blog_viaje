@@ -8,5 +8,12 @@ class User(AbstractUser):
     telefono = models.IntegerField(null = Value)
     redes_sociales = models.URLField(max_length=100, null = Value)
     image = models.ImageField(upload_to = 'imagenes_User/', blank=True, null=True )
+
+    class Meta:
+        verbose_name = 'Usuario'
+        verbose_name_plural = 'Usuarios'
+
+    def __str__(self):
+        return str(self.username)
     
 

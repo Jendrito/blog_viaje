@@ -288,3 +288,37 @@ header{
     background-color: rgba(21, 121, 187, 0.974);
     box-shadow: 1px 1px 1px 3px rgba(10, 96, 187, 0.4) ;
 }
+
+.Exitos{
+    display: block;
+    box-shadow: 1px 1px 1px 2px rgb(0, 0, 0, 0.1) ;
+    padding: 0%;
+    width: 370px;
+    height: 150px;
+    margin-left: 35%;
+    margin-top: 7%;
+    background-color:  rgb(152, 205, 243);
+    color: rgb(240, 241, 242); 
+    text-decoration: solid;
+    text-align: center;
+    align-content: center;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.Eliminar{
+    display: block;
+    box-shadow: 1px 1px 1px 2px rgb(0, 0, 0, 0.1) ;
+    padding: 0%;
+    width: 370px;
+    height: 200px;
+    margin-left: 35%;
+    margin-top: 7%;
+    background-color:  rgb(233, 239, 244);
+    color: rgb(240, 241, 242); 
+    text-decoration: solid;
+    text-align: center;
+    align-content: center;
+    max-width: 100%;
+    max-height: 100%;
+}
